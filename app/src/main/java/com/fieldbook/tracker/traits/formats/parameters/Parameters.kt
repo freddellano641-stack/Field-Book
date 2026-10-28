@@ -15,7 +15,8 @@ enum class Parameters {
     ATTACH_MEDIA,
     ALLOW_OTHER,
     CANOPY_SENSITIVITY,
-    DURATION;
+    DURATION,
+    CALCULATION_FORMULA;
 
     companion object {
 

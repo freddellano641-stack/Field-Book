@@ -2089,4 +2089,26 @@
     <string name="view_trait_innospectra_na">N/A</string>
     <string name="unknown">Unknown</string>
 
+    <!-- Calculated trait -->
+    <string name="traits_format_calculated">Calculated</string>
+    <string name="traits_create_calculation_formula">Formula</string>
+    <string name="traits_create_calculation_formula_hint">e.g. {Plot weight} / {Plot area} * 10</string>
+    <string name="traits_create_calculation_formula_help" formatted="false">Reference traits by name. Use braces for names with spaces. Operators: + - * / ^ %. Functions: sqrt, ln, log, exp, abs, round, min, max, mean, sum, if. Dates become days, so {Flowering} - {Sowing} gives days.</string>
+    <string name="traits_create_calculation_formula_required">Enter a formula</string>
+    <string name="traits_create_calculation_formula_invalid">Invalid formula: %1$s</string>
+    <string name="traits_create_calculation_formula_unknown_trait">Trait not found: %1$s</string>
+    <string name="traits_create_calculation_formula_self_reference">The formula cannot use the trait itself</string>
+    <string name="trait_calculated_inputs">Inputs</string>
+    <string name="trait_calculated_no_formula">This trait has no formula. Edit the trait to add one.</string>
+    <string name="trait_calculated_invalid_formula">The formula is invalid: %1$s</string>
+    <string name="trait_calculated_missing_inputs">Waiting for: %1$s</string>
+    <string name="trait_calculated_error">Could not calculate: %1$s</string>
+    <string name="trait_calculated_saved">Calculated and saved</string>
+    <string name="trait_calculated_empty_value">—</string>
+    <string name="trait_calculated_recalculate">Recalculate</string>
+    <string name="trait_calculated_calculate_all">Calculate all entries</string>
+    <string name="trait_calculated_calculate_all_confirm">Calculate %1$s for every entry in this field? Existing calculated values will be updated.</string>
+    <string name="trait_calculated_calculate_all_result">%1$d entries calculated, %2$d skipped for missing inputs</string>
+    <string name="trait_calculated_locked">Data is locked</string>
+
 </resources>

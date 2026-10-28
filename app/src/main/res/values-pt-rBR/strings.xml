@@ -1802,4 +1802,27 @@
     <string name="view_trait_innospectra_unknown">Desconhecido</string>
     <string name="view_trait_innospectra_na">N/A</string>
     <string name="unknown">Desconhecido</string>
+
+    <!-- Trait calculado -->
+    <string name="traits_format_calculated">Calculado</string>
+    <string name="traits_create_calculation_formula">Fórmula</string>
+    <string name="traits_create_calculation_formula_hint">ex.: {Peso parcela} / {Area util} * 10</string>
+    <string name="traits_create_calculation_formula_help" formatted="false">Use o nome dos traits. Nomes com espaço vão entre chaves. Operadores: + - * / ^ %. Funções: sqrt, ln, log, exp, abs, round, min, max, mean, sum, if. Datas viram dias, então {Floracao} - {Semeadura} dá o número de dias.</string>
+    <string name="traits_create_calculation_formula_required">Digite uma fórmula</string>
+    <string name="traits_create_calculation_formula_invalid">Fórmula inválida: %1$s</string>
+    <string name="traits_create_calculation_formula_unknown_trait">Trait não encontrado: %1$s</string>
+    <string name="traits_create_calculation_formula_self_reference">A fórmula não pode usar o próprio trait</string>
+    <string name="trait_calculated_inputs">Entradas</string>
+    <string name="trait_calculated_no_formula">Este trait não tem fórmula. Edite o trait para adicionar uma.</string>
+    <string name="trait_calculated_invalid_formula">A fórmula é inválida: %1$s</string>
+    <string name="trait_calculated_missing_inputs">Aguardando: %1$s</string>
+    <string name="trait_calculated_error">Não foi possível calcular: %1$s</string>
+    <string name="trait_calculated_saved">Calculado e salvo</string>
+    <string name="trait_calculated_empty_value">—</string>
+    <string name="trait_calculated_recalculate">Recalcular</string>
+    <string name="trait_calculated_calculate_all">Calcular todas as parcelas</string>
+    <string name="trait_calculated_calculate_all_confirm">Calcular %1$s para todas as parcelas deste campo? Valores já calculados serão atualizados.</string>
+    <string name="trait_calculated_calculate_all_result">%1$d parcelas calculadas, %2$d puladas por falta de dados</string>
+    <string name="trait_calculated_locked">Dados bloqueados</string>
+
 </resources>
