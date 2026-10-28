@@ -26,7 +26,7 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      # The gradle-wrapper.jar committed upstream does not match any official Gradle release,
+      # The gradle-wrapper.jar committed upstream fails Gradle's wrapper checksum validation,
       # so it is never executed here: Gradle itself is installed at the wrapper's version.
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v5
