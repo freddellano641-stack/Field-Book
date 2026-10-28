@@ -1,8 +1,9 @@
 name: build-apk
 
-# Builds a debug APK on every push and keeps it as a downloadable artifact.
-# The debug build installs next to the official Field Book (package suffix ".debug").
-# To download: Actions tab > latest "build-apk" run > Artifacts > field-book-debug-apk.
+# Builds a debug APK on every push. The debug build installs next to the official
+# Field Book (package suffix ".debug").
+# Download on a phone: Releases page > "teste-<branch>" > FieldBook-<branch>.apk
+# (each push replaces that pre-release). Also kept as a workflow artifact.
 
 on:
   push:
@@ -11,6 +12,9 @@ on:
 concurrency:
   group: build-apk-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: write   # to publish the test pre-release
 
 jobs:
   build:
@@ -52,3 +56,18 @@ jobs:
           name: field-book-debug-apk
           path: app/build/outputs/apk/debug/*.apk
           retention-days: 30
+
+      # A pre-release gives a direct download link that works from the phone's browser
+      - name: Publish test pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          safe=$(echo "$BRANCH" | tr -c 'A-Za-z0-9._-' '-' | sed 's/-*$//')
+          tag="teste-$safe"
+          apk="FieldBook-$safe.apk"
+          cp app/build/outputs/apk/debug/*.apk "$apk"
+          gh release delete "$tag" --cleanup-tag --yes || true
+          gh release create "$tag" "$apk" --prerelease --target "$GITHUB_SHA" \
+            --title "Teste: $BRANCH" \
+            --notes "Versão de teste do branch $BRANCH (commit ${GITHUB_SHA::7}). Instala ao lado do Field Book oficial."
