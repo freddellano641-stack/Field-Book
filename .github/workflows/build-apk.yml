@@ -37,10 +37,10 @@ jobs:
       # Each Gradle run is logged; on failure the important lines become an annotation,
       # readable from the run page and the API without downloading the full log.
       - name: Unit tests (calculated traits)
-        run: .github/scripts/gradle-annotate.sh :app:testDebugUnitTest --tests "com.fieldbook.tracker.traits.calculated.*"
+        run: .github/workflows/scripts/gradle-annotate.sh :app:testDebugUnitTest --tests "com.fieldbook.tracker.traits.calculated.*"
 
       - name: Build debug APK
-        run: .github/scripts/gradle-annotate.sh :app:assembleDebug
+        run: .github/workflows/scripts/gradle-annotate.sh :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
