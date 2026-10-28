@@ -34,6 +34,10 @@ jobs:
           gradle-version: "8.11.1"
           validate-wrappers: false
 
+      # app/build.gradle reads local.properties, which is not committed
+      - name: Create local.properties
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
       # Each Gradle run is logged; on failure the important lines become an annotation,
       # readable from the run page and the API without downloading the full log.
       - name: Unit tests (calculated traits)
